@@ -5,7 +5,7 @@ import MainContent from '@components/MainContent'
 
 <MainLayout title="Welcome to Astro.">
 	<main class="min-h-screen bg-slate-900 flex justify-center items-start pt-16">
-		<div class="w-full md:w-11/12 max-w-[1920px] flex flex-col justify-start items-center bg-slate-300 rounded-lg min-h-screen">
+		<div class="w-full md:w-11/12 max-w-[1920px] min-w-[200px] flex flex-col justify-start items-center bg-slate-300 rounded-lg min-h-screen">
 			<h1 class="text-slate-900 w-full h-[5rem] text-xl  md:text-2xl uppercase text-center py-8 border-b-2 border-slate-800">Giá hàng mới nhất</h1>
 			<MainContent client:only />
 		</div>

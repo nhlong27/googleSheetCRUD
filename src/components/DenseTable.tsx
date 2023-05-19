@@ -26,7 +26,7 @@ export const DenseTable: React.FC<DenseTableProps> = (props) => {
 
   return data && filteredList && ( filteredList?.length?? 0 > 0) ? (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+      <Table sx={{ minWidth: 200, borderSpacing: 0 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
             {Object.keys(filteredList[0] as {}).map((title, index)=>{
@@ -38,15 +38,16 @@ export const DenseTable: React.FC<DenseTableProps> = (props) => {
           {filteredList.map((row, index) => (
             <TableRow
               key={index}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 }, minWidth:30 }}
+              
             >
-              <TableCell component="th" scope="row">
+              <TableCell size='small' padding='none' component="th" scope="row">
                 {row['Tên hàng ']}
               </TableCell>
-              <TableCell align="right">{row['Thùng sỉ']}</TableCell>
-              <TableCell align="right">{row['Thùng lẻ']}</TableCell>
-              <TableCell align="right">{row['Lốc']}</TableCell>
-              <TableCell align="right">{row['Lon/chai lẻ']}</TableCell>
+              <TableCell size='small' padding='none' align="right">{row['Thùng sỉ']}</TableCell>
+              <TableCell size='small' padding='none' align="right">{row['Thùng lẻ']}</TableCell>
+              <TableCell size='small' padding='none' align="right">{row['Lốc']}</TableCell>
+              <TableCell size='small' padding='none' align="right">{row['Lon/chai lẻ']}</TableCell>
             </TableRow>
           ))}
         </TableBody>
