@@ -3,7 +3,7 @@ import { TableData } from './types/types'
 import { useQuery } from '@tanstack/react-query'
 
 export const getData = async () => {
-  return TableData.parse((await axios.get('https://sheetdb.io/api/v1/i1s82ap97drdg')).data)
+  return TableData.parse((await axios.get(`https://sheetdb.io/api/v1/iw8wluarb0vfd`)).data)
 }
 
 export const useGetDataQuery = () => {

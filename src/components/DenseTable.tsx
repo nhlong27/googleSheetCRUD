@@ -21,10 +21,12 @@ export const DenseTable: React.FC<DenseTableProps> = (props) => {
 
 
   React.useEffect(()=>{
-    setFilteredList(data?.filter(row=>queryTitle!=='' ? row['Tên hàng ']?.includes(queryTitle) : true))
+    setFilteredList(data?.filter(row=>queryTitle!=='' ? row['Tên hàng ']?.toLowerCase().includes(queryTitle.toLowerCase()) : true))
   }, [queryTitle, data])
 
-  return data && filteredList && ( filteredList?.length?? 0 > 0) ? (
+  return data ? (
+    <>
+    {filteredList && ( filteredList?.length?? 0 > 0) ? 
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 200, borderSpacing: 0 }} size="small" aria-label="a dense table">
         <TableHead>
@@ -52,6 +54,8 @@ export const DenseTable: React.FC<DenseTableProps> = (props) => {
           ))}
         </TableBody>
       </Table>
-    </TableContainer>
+    </TableContainer> : <div>Not found</div>
+    }
+    </>
   ) : error instanceof Error ? <div>Error..</div> : <div>Loading..</div>
 }

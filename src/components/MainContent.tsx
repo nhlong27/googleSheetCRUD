@@ -10,7 +10,7 @@ const queryClient = new QueryClient();
 
 const MainContent = () => {
   const [queryTitle,setQueryTitle] = React.useState('')
-  console.log(queryTitle)
+  
   return  (
     <div>
       <Search queryTitle={queryTitle} setQueryTitle={setQueryTitle} />
